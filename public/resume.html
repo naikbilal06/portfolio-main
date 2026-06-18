@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilal Ahmad Naikoo - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .resume-container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: white;
+            box-shadow: 0 0 30px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #0D8ABC, #85808e);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            margin: 0 auto 20px;
+            overflow: hidden;
+            background: white;
+        }
+        
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .name {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .title {
+            font-size: 20px;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        /* Sections */
+        .section {
+            padding: 30px 40px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+        }
+        
+        .section-title {
+            color: #0D8ABC;
+            font-size: 24px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #0D8ABC;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-title i {
+            font-size: 20px;
+        }
+        
+        /* Summary */
+        .summary {
+            text-align: justify;
+            line-height: 1.8;
+        }
+        
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .skill-category {
+            margin-bottom: 15px;
+        }
+        
+        .skill-category h4 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        
+        .skill-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .skill-item {
+            background: #f0f7ff;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            border: 1px solid #0D8ABC;
+            color: #0D8ABC;
+        }
+        
+        /* Experience & Education */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #0D8ABC;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .timeline-item:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -33px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #0D8ABC;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #0D8ABC;
+        }
+        
+        .timeline-date {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        
+        .timeline-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .timeline-subtitle {
+            color: #0D8ABC;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        
+        .timeline-desc {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* Projects */
+        .project-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            border-left: 4px solid #0D8ABC;
+        }
+        
+        .project-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin: 10px 0;
+        }
+        
+        .tech-tag {
+            background: #e3f2fd;
+            color: #0D8ABC;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #f5f5f5;
+            padding: 20px 40px;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 10px;
+        }
+        
+        .social-link {
+            color: #0D8ABC;
+            text-decoration: none;
+        }
+        
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+            }
+            
+            .resume-container {
+                box-shadow: none;
+                margin: 0;
+                max-width: 100%;
+            }
+            
+            .no-print {
+                display: none;
+            }
+            
+            .section {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="resume-container">
+        <!-- Header Section -->
+        <div class="header">
+            <div class="profile-img">
+                <img src="https://scontent.fsxr1-2.fna.fbcdn.net/v/t39.30808-1/298218688_587014296434298_4248133431627928893_n.jpg?stp=c0.0.612.612a_dst-jpg_s200x200_tt6&_nc_cat=107&ccb=1-7&_nc_sid=1d2534&_nc_ohc=xhKiF-xQejMQ7kNvwHqYwwd&_nc_oc=AdnbcszYSRbYrj5RvOX7rJJiNVlK0WTv7KAozEczL18h-V7qK28B84D3Wl235781QJ9hbtN9KKbfIUM7gpJy2SJz&_nc_zt=24&_nc_ht=scontent.fsxr1-2.fna&_nc_gid=5zn5SHts2iIjhhaU-laHYA&oh=00_Afm7qWHMBCARUZBcUchy38wjeVhpVYlUw-Pl7DfT52Gf2Q&oe=695887D8" alt="Bilal Ahmad Naikoo">
+            </div>
+            
+            <div class="name">Bilal Ahmad Naikoo</div>
+            <div class="title">Full-Stack Developer | BCA Student</div>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>naikbilal136@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+91 7889629463</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Anantnag, Jammu & Kashmir, India</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <span>github.com/naikbilal06</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <span>linkedin.com/in/naik-bilal-01ba0b2ab</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Summary Section -->
+        <div class="section">
+            <div class="section-title">
+                <i class="fas fa-user"></i>
+                Professional Summary
+            </div>
+            <div class="summary">
+                Full-stack developer and Bachelor of Computer Applications student with hands-on experience designing and building web applications across the front end and back end. Proficient in React.js, Node.js, Express.js, ASP.NET, and SQL Server, with practical exposure to RESTful API design, relational data modeling, and version control with Git. Strong analytical problem-solving abilities, with a self-directed track record of delivering personal projects from concept through completion.
+            </div>
+        </div>
+
+        <!-- Skills Section -->
+        <div class="section">
+            <div class="section-title">
+                <i class="fas fa-code"></i>
+                Technical Skills
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Languages</h4>
+                    <div class="skill-items">
+                        <span class="skill-item">C#</span>
+                        <span class="skill-item">JavaScript</span>
+                        <span class="skill-item">SQL</span>
+                        <span class="skill-item">HTML5</span>
+                        <span class="skill-item">CSS3</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h4>Frameworks & Libraries</h4>
+                    <div class="skill-items">
+                        <span class="skill-item">React.js</span>
+                        <span class="skill-item">Node.js</span>
+                        <span class="skill-item">Express.js</span>
+                        <span class="skill-item">ASP.NET</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h4>Databases & Tools</h4>
+                    <div class="skill-items">
+                        <span class="skill-item">SQL Server</span>
+                        <span class="skill-item">MongoDB</span>
+                        <span class="skill-item">Git</span>
+                        <span class="skill-item">GitHub</span>
+                        <span class="skill-item">VS Code</span>
+                        <span class="skill-item">Postman</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Experience Section -->
+        <div class="section">
+            <div class="section-title">
+                <i class="fas fa-briefcase"></i>
+                Project Experience
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2024</div>
+                    <div class="timeline-title">Website Analyzer</div>
+                    <div class="timeline-subtitle">Personal Project</div>
+                    <div class="timeline-desc">
+                        Engineered a full-stack web application that audits websites for SEO health, page performance, and analytics, consolidating results into a single, easy-to-read report. Built with Python, Flask, BeautifulSoup, and SQLite.
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2024</div>
+                    <div class="timeline-title">Hotel Management System</div>
+                    <div class="timeline-subtitle">Personal Project</div>
+                    <div class="timeline-desc">
+                        Developed a hotel management system to handle room bookings, billing, and customer records with ASP.NET Core, Entity Framework Core, and SQL Server. Designed relational database schemas to maintain data integrity.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects Section -->
+        <div class="section">
+            <div class="section-title">
+                <i class="fas fa-project-diagram"></i>
+                Projects
+            </div>
+            
+            <div class="project-item">
+                <div class="project-title">Website Analyzer</div>
+                <div class="timeline-desc">
+                    Built a full-stack web application to audit websites for SEO health, page performance, and analytics. The tool generates clear, actionable reports for site improvements.
+                </div>
+                <div class="project-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Flask</span>
+                    <span class="tech-tag">BeautifulSoup</span>
+                    <span class="tech-tag">SQLite</span>
+                    <span class="tech-tag">SEO</span>
+                </div>
+            </div>
+            
+            <div class="project-item">
+                <div class="project-title">Hotel Management System</div>
+                <div class="timeline-desc">
+                    Developed a hotel reservation and billing system using ASP.NET Core and SQL Server, with customer records management and real-time room availability tracking.
+                </div>
+                <div class="project-tech">
+                    <span class="tech-tag">C#</span>
+                    <span class="tech-tag">ASP.NET Core</span>
+                    <span class="tech-tag">Entity Framework</span>
+                    <span class="tech-tag">SQL Server</span>
+                    <span class="tech-tag">Bootstrap</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Education Section -->
+        <div class="section">
+            <div class="section-title">
+                <i class="fas fa-graduation-cap"></i>
+                Education
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Expected June 2024</div>
+                    <div class="timeline-title">Bachelor of Computer Applications (BCA)</div>
+                    <div class="timeline-subtitle">Shaheed Himayum Muzzamil Memorial Government Degree College, Anantnag</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2020</div>
+                    <div class="timeline-title">Higher Secondary (12th)</div>
+                    <div class="timeline-subtitle">Govt. Higher Secondary School, Hakura</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2018</div>
+                    <div class="timeline-title">Secondary (10th)</div>
+                    <div class="timeline-subtitle">Public Model High School, Hakura</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Languages Section -->
+        <div class="section">
+            <div class="section-title">
+                <i class="fas fa-language"></i>
+                Languages
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-title">English</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-title">Urdu</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-title">Kashmiri</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div>References available upon request</div>
+            <div class="social-links">
+                <a href="https://github.com/naikbilal06" class="social-link" target="_blank">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="https://linkedin.com/in/naik-bilal-01ba0b2ab" class="social-link" target="_blank">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="mailto:naikbilal136@gmail.com" class="social-link">
+                    <i class="fas fa-envelope"></i> Email
+                </a>
+            </div>
+            <div style="margin-top: 10px; font-size: 12px;">
+                Last Updated: December 2024
+            </div>
+            <button class="no-print" onclick="window.print()" style="
+                margin-top: 15px;
+                padding: 10px 20px;
+                background: #0D8ABC;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 16px;
+            ">
+                <i class="fas fa-print"></i> Print / Save as PDF
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Print functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const printBtn = document.querySelector('button');
+            printBtn.addEventListener('click', function() {
+                window.print();
+            });
+        });
+    </script>
+</body>
+</html>
