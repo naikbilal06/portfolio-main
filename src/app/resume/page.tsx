@@ -100,6 +100,12 @@ export default function ResumePage() {
                     <FiLink />
                     <span>linkedin.com/in/naik-bilal-01ba0b2ab</span>
                   </div>
+                  <div className="flex items-center gap-3 text-gray-700 dark:text-gray-300">
+                    <FiLink />
+                    <Link href="/" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-200 underline decoration-dotted underline-offset-4">
+                      Portfolio Website
+                    </Link>
+                  </div>
                 </div>
               </div>
 
